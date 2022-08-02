@@ -8,7 +8,7 @@ export default class IndexRoute extends Route {
         description: 'Web developer',
         cell: '+38761811375',
         git: 'https://github.com/ajdinl',
-        website: 'https://ajdinlojic.netlify.app/',
+        website: 'https://ajdinlojic.vercel.app/',
         email: 'ajdinl@live.com',
         linkedin: '@ajdinlojic',
         linkedinLink: 'https://www.linkedin.com/in/ajdin-lojic/',
