@@ -1,0 +1,53 @@
+<div class='flex flex-col pt-2'>
+  {{#let @data.personal as |item|}}
+    <div class='bg-white p-6 w-64 h-60 sm:mt-24 mt-0 rounded-2xl'>
+      <div class='text-mygreen font-bold bg-transparent mb-4'>
+        Personal Profile
+      </div>
+      <div class='text-mygrey text-md bg-transparent'>{{item.profile}}</div>
+    </div>
+    <div class='bg-white p-6 w-64 h-auto mt-8 rounded-2xl'>
+      <div class='text-mygreen font-bold bg-transparent mb-4'>Skills</div>
+      <div class='text-mygrey text-sm bg-transparent'>
+        <div class='bg-transparent font-bold text-black'>
+          Coding Languages:
+        </div>
+        <div class='bg-transparent mb-3 mt-1'>{{item.languages}}
+        </div>
+        <div class='bg-transparent font-bold text-black'>More JS:</div>
+        <div class='bg-transparent mb-3 mt-1'>{{item.more}}</div>
+        <div class='bg-transparent font-bold text-black'>Other:</div>
+        <div class='bg-transparent mb-3 mt-1'>{{item.other}}</div>
+      </div>
+    </div>
+    <div class='bg-white p-6 w-64 h-80 mt-8 rounded-2xl mb-10'>
+      <div class='text-mygreen font-bold bg-transparent mb-4'>
+        About me
+      </div>
+      <div class='text-mygrey text-md bg-transparent'>
+        <div class='text-mygrey text-sm bg-transparent'>
+          <div class='bg-transparent font-bold text-black mb-1'>
+            Personalities:
+          </div>
+          <div class='ml-4 bg-white'>
+            <ul class='list-disc mb-4'>
+              {{#each item.personalities as |item|}}
+                <li class='bg-white'>{{item}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class='bg-transparent font-bold text-black mb-1'>
+            Hobby:
+          </div>
+          <div class='ml-4 bg-white'>
+            <ul class='list-disc mb-4'>
+              {{#each item.hobbies as |item|}}
+                <li class='bg-white'>{{item}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/let}}
+</div>

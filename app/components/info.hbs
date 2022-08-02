@@ -1,0 +1,76 @@
+<div class='flex flex-col mt-0.5'>
+  <div class='-mt-6'>
+    <div class='ml-10'>
+      <img
+        class='rounded-full'
+        src='/images/selfie.jpg'
+        width='160px'
+        height='160px'
+        alt='myImage'
+      />
+    </div>
+    <div
+      class='flex flex-row flex-wrap -mt-8 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center'
+    >
+      <h1
+        class='text-2xl font-heboo font-extrabold ml-14 pt-12 bg-transparent
+          {{if @isDark "text-white"}}'
+      >
+        {{@data.fullName}}
+      </h1>
+      <h3 class='text-white bg-transparent text-sm ml-16 -mt-7'>
+        {{@data.description}}
+      </h3>
+    </div>
+  </div>
+  <div class='flex flex-col space-y-2 ml-6'>
+    <div class='text-myblue font-bold mb-6'> How to reach me: </div>
+    <div class='font-bold {{if @isDark "text-white"}}'>Cell:</div>
+    <div
+      class='{{if @isDark "text-blue-100" "text-mygrey"}} text-sm'
+    >{{@data.cell}}
+    </div>
+    <div class='font-bold {{if @isDark "text-white"}}'>Git:</div>
+    <a
+      href={{@data.git}}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='{{if @isDark "text-green-100" "text-mygrey"}}
+        underline text-sm hover:text-mygreen'
+    >
+      {{@data.git}}
+    </a>
+    <div class='font-bold {{if @isDark "text-white"}}'>Web:</div>
+    <a
+      href={{@data.website}}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='{{if @isDark "text-red-100" "text-mygrey"}}
+        underline text-sm hover:text-green-300'
+    >
+      {{@data.website}}
+    </a>
+    <div class='font-bold {{if @isDark "text-white"}}'>Email:</div>
+    <div
+      class='{{if @isDark "text-blue-100" "text-mygrey"}}
+        text-sm underline hover:text-yellow-600'
+    >
+      <a href='mailto:{{@data.email}}'>{{@data.email}}</a>
+    </div>
+    <div class='font-bold {{if @isDark "text-white"}}'>Linkedin:</div>
+    <a
+      href={{@data.linkedinLink}}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='{{if @isDark "text-blue-100" "text-mygrey"}}
+        underline text-sm hover:text-myblue'
+    >
+      {{@data.linkedin}}
+    </a>
+    <div class='font-bold {{if @isDark "text-white"}}'>Country - City:</div>
+    <div
+      class='{{if @isDark "text-blue-100" "text-mygrey"}} text-sm'
+    >{{@data.address}}
+    </div>
+  </div>
+</div>

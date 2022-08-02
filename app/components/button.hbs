@@ -1,0 +1,31 @@
+<div
+  class='flex flex-row items-center space-x-2 text-sm absolute top-20 left-1/3 sm:left-2/3'
+>
+
+  <div class='{{if @isDark "text-[#9c9ea3]"}}'>Change theme to:</div>
+
+  <div class='w-10 h-4 flex items-center bg-gray-300 rounded-full'>
+    <div
+      class='md:w-6 md:h-6 h-5 w-5 rounded-full bg-myblue shadow-md transform
+        {{if @isDark "translate-x-5"}}'
+    >
+      {{#if @isDark}}
+        <button type='button' {{on 'click' @toggleTheme}}>
+          <MdIcon
+            @icon='white-balance-sunny'
+            @size='20'
+            class='h-5 w-5 mt-0 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500'
+          />
+        </button>
+      {{else}}
+        <button type='button' {{on 'click' @toggleTheme}}>
+          <MdIcon
+            @icon='moon-waxing-crescent'
+            @size='20'
+            class='h-5 w-5 mt-0 sm:mt-0.5 ml-0 sm:ml-0.5 text-black'
+          />
+        </button>
+      {{/if}}
+    </div>
+  </div>
+</div>

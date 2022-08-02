@@ -1,0 +1,10 @@
+<div
+  class='flex flex-row flex-wrap
+    {{if this.isDark "bg-[#252525]" "bg-mybackground"}}
+    pt-36 space-y-6 space-x-0 sm:space-x-6 justify-center min-h-screen -ml-5'
+>
+  <Button @isDark={{this.isDark}} @toggleTheme={{this.toggleTheme}} />
+  <Info @data={{@model.info}} @isDark={{this.isDark}} />
+  <Personal @data={{@model}} />
+  <Career @data={{@model}} />
+</div>
