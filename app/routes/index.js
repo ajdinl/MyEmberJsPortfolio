@@ -27,7 +27,7 @@ export default class IndexRoute extends Route {
           'Communication',
           'Organization',
         ],
-        hobbies: ['CryptoCurrency', 'Motorcycling', 'Skiing', 'Photography'],
+        hobbies: ['CryptoCurrency', 'Motorcycling', 'Skiing'],
       },
       career: {
         employer1: {
