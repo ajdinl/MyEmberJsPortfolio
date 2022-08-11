@@ -20,14 +20,14 @@ export default class IndexRoute extends Route {
         languages: 'JavaScript, HTML/CSS',
         more: 'EmberJS, Ember-Data, React, Next, React Router, Redux/Recoil, Node, Express, Mongoose(MongoDB)',
         other:
-          'Bootstrap, Tailwind CSS, Adobe Photoshop, Lightroom, Linux, Visual Studio Code',
+          'Bootstrap, Tailwind CSS, Adobe Photoshop, Linux, Visual Studio Code',
         personalities: [
           'Accuracy',
+          'Organization',
           'Creativity',
           'Communication',
-          'Organization',
         ],
-        hobbies: ['CryptoCurrency', 'Motorcycling', 'Skiing'],
+        hobbies: ['Motorcycling', 'Skiing', 'CryptoCurrency'],
       },
       career: {
         employer1: {
@@ -59,19 +59,6 @@ export default class IndexRoute extends Route {
             'Provide operational support to the team',
             'Creating and posting documentation, keeping a budget and cash register table',
           ],
-        },
-      },
-      education: {
-        college: {
-          headline: 'Faculty of Political Science, University of Sarajevo',
-          period: '2012 - 2014',
-          profession: 'Bachelor of Business Communication.',
-        },
-        highSchool: {
-          headline:
-            'J.U. „Željeznički school centar“ Sarajevo and J.U. „Mješovita srednja škola“ Gračanica',
-          period: '2003 - 2007',
-          profession: 'Electrical technician.',
         },
       },
     };
