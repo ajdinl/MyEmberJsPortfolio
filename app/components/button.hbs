@@ -10,16 +10,26 @@
         {{if @isDark "translate-x-5"}}'
     >
       {{#if @isDark}}
-        <button type='button' {{on 'click' @toggleTheme}}>
+        <button
+          data-test-theme-toggle
+          type='button'
+          {{on 'click' @toggleTheme}}
+        >
           <MdIcon
+            data-test-theme-icon
             @icon='white-balance-sunny'
             @size='20'
             class='h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500'
           />
         </button>
       {{else}}
-        <button type='button' {{on 'click' @toggleTheme}}>
+        <button
+          data-test-theme-toggle
+          type='button'
+          {{on 'click' @toggleTheme}}
+        >
           <MdIcon
+            data-test-theme-icon
             @icon='moon-waxing-crescent'
             @size='20'
             class='h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-black'

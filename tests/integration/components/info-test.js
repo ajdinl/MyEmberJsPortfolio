@@ -10,17 +10,22 @@ module('Integration | Component | info', function (hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Info />`);
+    this.set('data', {
+      info: {
+        fullName: 'Ajdin Lojić',
+        description: 'Web developer',
+        cell: '+38761811375',
+        git: 'https://github.com/ajdinl',
+        website: 'https://ajdinlojic.vercel.app/',
+        email: 'ajdinl@live.com',
+        linkedin: '@ajdinlojic',
+        linkedinLink: 'https://www.linkedin.com/in/ajdin-lojic/',
+        address: 'Bosnia and Herzegovina, Sarajevo',
+      },
+    });
 
-    assert.dom(this.element).hasText('');
+    await render(hbs`<Info @data={{this.data.info}}/>`);
 
-    // Template block usage:
-    await render(hbs`
-      <Info>
-        template block text
-      </Info>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('[data-test-info-name]').hasText('Ajdin Lojić');
   });
 });

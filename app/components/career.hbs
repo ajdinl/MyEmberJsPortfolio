@@ -10,7 +10,10 @@
             {{career.employer1.headline}}
           </div>
           <div class='mb-2'>
-            <div class='bg-white text-black'>{{career.employer1.employer}}
+            <div
+              data-test-employer-name
+              class='bg-white text-black'
+            >{{career.employer1.employer}}
             </div>
             <div class='bg-white text-black'>{{career.employer1.period}}
             </div>
@@ -49,15 +52,22 @@
           </div>
 
           {{#if this.showDetails}}
-            <div class='ml-4 bg-white' {{on 'click' this.showDetailsToggle}}>
+            <div
+              data-test-collapse-toggle
+              class='ml-4 bg-white'
+              {{on 'click' this.showDetailsToggle}}
+            >
               <ul class='list-disc mb-4'>
                 {{#each career.employer3.obligations as |item|}}
-                  <li class='bg-white'>{{item}}</li>
+                  <li data-test-collapse-details class='bg-white'>{{item}}</li>
                 {{/each}}
               </ul>
             </div>
           {{else}}
-            <a {{on 'click' this.showDetailsToggle}}>...</a>
+            <a
+              data-test-collapse-toggle
+              {{on 'click' this.showDetailsToggle}}
+            >...</a>
           {{/if}}
         </div>
       </div>

@@ -10,17 +10,17 @@ module('Integration | Component | button', function (hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Button />`);
+    this.set('data', {
+      isDark: false,
+      toggleTheme: () => {
+        this.data.isDark = !this.data.isDark;
+      },
+    });
 
-    assert.dom(this.element).hasText('');
+    await render(
+      hbs`<Button @isDark={{this.data.isDark}} @toggleTheme={{this.data.toggleTheme}} />`
+    );
 
-    // Template block usage:
-    await render(hbs`
-      <Button>
-        template block text
-      </Button>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('Change theme to:');
   });
 });
