@@ -18,7 +18,7 @@ export default class IndexRoute extends Route {
         profile:
           'I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node js, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.',
         languages: 'JavaScript, HTML/CSS',
-        more: 'EmberJS, Ember-Data, React, Next, React Router, Redux/Recoil, Node, Express, Mongoose(MongoDB)',
+        more: 'EmberJS, Ember-Data, Next, React, React Router, Redux, Recoil ...',
         other:
           'Bootstrap, Tailwind CSS, Adobe Photoshop, Linux, Visual Studio Code',
         personalities: [
