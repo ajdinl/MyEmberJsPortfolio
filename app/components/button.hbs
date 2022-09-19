@@ -9,33 +9,23 @@
       class='md:w-6 md:h-6 h-5 w-5 rounded-full bg-myblue shadow-md transform
         {{if @isDark "translate-x-5"}}'
     >
-      {{#if @isDark}}
-        <button
-          data-test-theme-toggle
-          type='button'
-          {{on 'click' @toggleTheme}}
-        >
-          <MdIcon
-            data-test-theme-icon
-            @icon='white-balance-sunny'
-            @size='20'
-            class='h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500'
-          />
-        </button>
-      {{else}}
-        <button
-          data-test-theme-toggle
-          type='button'
-          {{on 'click' @toggleTheme}}
-        >
-          <MdIcon
-            data-test-theme-icon
-            @icon='moon-waxing-crescent'
-            @size='20'
-            class='h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-black'
-          />
-        </button>
-      {{/if}}
+      <button
+        id='toggle-theme'
+        data-test-theme-toggle
+        type='button'
+        {{on 'click' @toggleTheme}}
+      >
+        <MdIcon
+          data-test-theme-icon
+          @icon={{if @isDark 'white-balance-sunny' 'moon-waxing-crescent'}}
+          @size='20'
+          class={{if
+            @isDark
+            'h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500'
+            'h-5 w-5 -mt-0.5 sm:mt-0.5 ml-0 sm:ml-0.5 text-black'
+          }}
+        />
+      </button>
     </div>
   </div>
 </div>
