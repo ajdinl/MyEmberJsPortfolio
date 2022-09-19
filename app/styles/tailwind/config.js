@@ -10,6 +10,7 @@ module.exports = {
         myblue: '#38b6ff',
         mygreen: '#008037',
         mygrey: '#5b5e66',
+        mygreytwo: '#3C3E43',
       },
     },
   },

@@ -64,11 +64,12 @@
               </ul>
             </div>
           {{else}}
-            <a
-              href=''
+            <button
+              area-label='Show details'
+              type='button'
               data-test-collapse-toggle
               {{on 'click' this.showDetailsToggle}}
-            >...</a>
+            >...</button>
           {{/if}}
         </div>
       </div>

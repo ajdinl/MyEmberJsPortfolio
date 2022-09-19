@@ -10,7 +10,7 @@
         {{if @isDark "translate-x-5"}}'
     >
       <button
-        id='toggle-theme'
+        aria-label='Toggle Theme'
         data-test-theme-toggle
         type='button'
         {{on 'click' @toggleTheme}}
