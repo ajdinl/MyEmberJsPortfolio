@@ -52,6 +52,7 @@
           </div>
 
           {{#if this.showDetails}}
+
             <div
               data-test-collapse-toggle
               class='ml-4 bg-white'
@@ -69,7 +70,8 @@
               type='button'
               data-test-collapse-toggle
               {{on 'click' this.showDetailsToggle}}
-            >...</button>
+            ><MdIcon @icon='chevron-down' @size='20' />
+            </button>
           {{/if}}
         </div>
       </div>
