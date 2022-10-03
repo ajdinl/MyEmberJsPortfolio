@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         mybackground: '#efefef',
         myblue: '#38b6ff',
-        mygreen: '#008037',
+        mygreen: '#005C28',
         mygrey: '#5b5e66',
         mygreytwo: '#3C3E43',
       },
