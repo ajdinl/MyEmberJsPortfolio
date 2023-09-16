@@ -16,11 +16,11 @@ export default class IndexRoute extends Route {
       },
       personal: {
         profile:
-          'I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node js, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.',
+          'I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.',
         languages: 'JavaScript, HTML/CSS',
-        more: 'EmberJS, Ember-Data, NextJS, ReactJS, React Router, Redux',
+        more: 'ReactJS, NextJS, React Router, Redux, EmberJS, EmberData',
         other:
-          'Bootstrap, Tailwind CSS, Adobe XD, Git, Linux, Visual Studio Code',
+          'Tailwind CSS, Bootstrap, Adobe XD, Git, Visual Studio Code, Linux',
         personalities: [
           'Accuracy',
           'Organization',
@@ -33,7 +33,7 @@ export default class IndexRoute extends Route {
         employer1: {
           headline: 'Front-end developer',
           employer: 'Experfy',
-          period: 'Feb 2022 to present',
+          period: 'Aug 2021 to Present',
           obligations: [
             'Writing well designed, testable, efficient code by using best software development practices',
             'Creating website layout/user interfaces by using standard HTML/CSS practices',
@@ -43,7 +43,7 @@ export default class IndexRoute extends Route {
         employer2: {
           headline: 'Service Technician',
           employer: 'Xenon-forte d.o.o.',
-          period: 'Jan 2021 to Nov 2021',
+          period: 'Oct 2020 to Aug 2021',
           obligations: [
             'Troubleshooting hardware and software',
             'Printer and computer diagnostic and service',
@@ -53,7 +53,7 @@ export default class IndexRoute extends Route {
         employer3: {
           headline: 'Administrative and technical assistant',
           employer: 'Accounting d.o.o.',
-          period: 'Jan 2015 to Dec 2020',
+          period: 'Jan 2015 to Oct 2020',
           obligations: [
             'Coordinating and performing administrative tasks',
             'Provide operational support to the team',
