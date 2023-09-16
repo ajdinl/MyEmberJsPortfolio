@@ -121,68 +121,36 @@
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
     <div class='flex flex-col pt-2'>
-    {{#let @data.career as |career|}}
-      <div class='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24'>
-        <div class='text-mygreen font-bold bg-transparent mb-4'>
-          Career Summary
-        </div>
+  
+    <div class='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24'>
+      <div class='text-mygreen font-bold bg-transparent mb-4'>
+        Career Summary
+      </div>
+      {{#each @data.career as |career|}}
         <div class='text-mygrey text-md bg-transparent'>
           <div class='text-mygrey text-sm bg-transparent'>
             <div class='bg-transparent font-bold text-black mb-1'>
-              {{career.employer1.headline}}
+              {{career.headline}}
             </div>
             <div class='mb-2'>
               <div
                 data-test-employer-name
                 class='bg-white text-black'
-              >{{career.employer1.employer}}
+              >{{career.employer}}
               </div>
-              <div class='bg-white text-black'>{{career.employer1.period}}
-              </div>
-            </div>
-            <div class='ml-4 bg-white'>
-              <ul class='list-disc mb-4'>
-                {{#each career.employer1.obligations as |item|}}
-                  <li class='bg-white'>{{item}}</li>
-                {{/each}}
-              </ul>
-            </div>
-            <div class='bg-transparent font-bold text-black mb-1'>
-              {{career.employer2.headline}}
-            </div>
-            <div class='mb-2'>
-              <div class='bg-white text-black'>{{career.employer2.employer}}
-              </div>
-              <div class='bg-white text-black'>{{career.employer2.period}}
+              <div class='bg-white text-black'>{{career.period}}
               </div>
             </div>
-            <div class='ml-4 bg-white'>
-              <ul class='list-disc mb-4'>
-                {{#each career.employer2.obligations as |item|}}
-                  <li class='bg-white'>{{item}}</li>
-                {{/each}}
-              </ul>
-            </div>
-            <div class='bg-transparent font-bold text-black mb-1 pb-2'>
-              {{career.employer3.headline}}
-            </div>
-            <div class='mb-2'>
-              <div class='bg-white text-black'>{{career.employer3.employer}}
-              </div>
-              <div class='bg-white text-black'>{{career.employer3.period}}
-              </div>
-            </div>
-  
-            {{#if this.showDetails}}
-  
-              <div
-                data-test-collapse-toggle
-                class='ml-4 bg-white'
-                {{on 'click' this.showDetailsToggle}}
-              >
+            {{#if
+              (or
+                (eq this.showDetails true)
+                (not-eq career.employer 'Accounting d.o.o.')
+              )
+            }}
+              <div class='ml-4 bg-white'>
                 <ul class='list-disc mb-4'>
-                  {{#each career.employer3.obligations as |item|}}
-                    <li data-test-collapse-details class='bg-white'>{{item}}</li>
+                  {{#each career.obligations as |item|}}
+                    <li class='bg-white'>{{item}}</li>
                   {{/each}}
                 </ul>
               </div>
@@ -190,20 +158,20 @@
               <button
                 area-label='Toggle details'
                 type='button'
-                data-test-collapse-toggle
+                class='inset-x-0'
                 {{on 'click' this.showDetailsToggle}}
               ><MdIcon @icon='chevron-down' @size='20' />
               </button>
             {{/if}}
           </div>
         </div>
-      </div>
-    {{/let}}
+      {{/each}}
+    </div>
   </div>
   */
   {
-    "id": "vSLEfOM7",
-    "block": "[[[10,0],[14,0,\"flex flex-col pt-2\"],[12],[1,\"\\n\"],[44,[[30,1,[\"career\"]]],[[[1,\"    \"],[10,0],[14,0,\"bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24\"],[12],[1,\"\\n      \"],[10,0],[14,0,\"text-mygreen font-bold bg-transparent mb-4\"],[12],[1,\"\\n        Career Summary\\n      \"],[13],[1,\"\\n      \"],[10,0],[14,0,\"text-mygrey text-md bg-transparent\"],[12],[1,\"\\n        \"],[10,0],[14,0,\"text-mygrey text-sm bg-transparent\"],[12],[1,\"\\n          \"],[10,0],[14,0,\"bg-transparent font-bold text-black mb-1\"],[12],[1,\"\\n            \"],[1,[30,2,[\"employer1\",\"headline\"]]],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"mb-2\"],[12],[1,\"\\n            \"],[10,0],[14,\"data-test-employer-name\",\"\"],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer1\",\"employer\"]]],[1,\"\\n            \"],[13],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer1\",\"period\"]]],[1,\"\\n            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"ml-4 bg-white\"],[12],[1,\"\\n            \"],[10,\"ul\"],[14,0,\"list-disc mb-4\"],[12],[1,\"\\n\"],[42,[28,[37,2],[[28,[37,2],[[30,2,[\"employer1\",\"obligations\"]]],null]],null],null,[[[1,\"                \"],[10,\"li\"],[14,0,\"bg-white\"],[12],[1,[30,3]],[13],[1,\"\\n\"]],[3]],null],[1,\"            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"bg-transparent font-bold text-black mb-1\"],[12],[1,\"\\n            \"],[1,[30,2,[\"employer2\",\"headline\"]]],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"mb-2\"],[12],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer2\",\"employer\"]]],[1,\"\\n            \"],[13],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer2\",\"period\"]]],[1,\"\\n            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"ml-4 bg-white\"],[12],[1,\"\\n            \"],[10,\"ul\"],[14,0,\"list-disc mb-4\"],[12],[1,\"\\n\"],[42,[28,[37,2],[[28,[37,2],[[30,2,[\"employer2\",\"obligations\"]]],null]],null],null,[[[1,\"                \"],[10,\"li\"],[14,0,\"bg-white\"],[12],[1,[30,4]],[13],[1,\"\\n\"]],[4]],null],[1,\"            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"bg-transparent font-bold text-black mb-1 pb-2\"],[12],[1,\"\\n            \"],[1,[30,2,[\"employer3\",\"headline\"]]],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"mb-2\"],[12],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer3\",\"employer\"]]],[1,\"\\n            \"],[13],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer3\",\"period\"]]],[1,\"\\n            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n\\n\"],[41,[30,0,[\"showDetails\"]],[[[1,\"\\n            \"],[11,0],[24,\"data-test-collapse-toggle\",\"\"],[24,0,\"ml-4 bg-white\"],[4,[38,4],[\"click\",[30,0,[\"showDetailsToggle\"]]],null],[12],[1,\"\\n              \"],[10,\"ul\"],[14,0,\"list-disc mb-4\"],[12],[1,\"\\n\"],[42,[28,[37,2],[[28,[37,2],[[30,2,[\"employer3\",\"obligations\"]]],null]],null],null,[[[1,\"                  \"],[10,\"li\"],[14,\"data-test-collapse-details\",\"\"],[14,0,\"bg-white\"],[12],[1,[30,5]],[13],[1,\"\\n\"]],[5]],null],[1,\"              \"],[13],[1,\"\\n            \"],[13],[1,\"\\n\"]],[]],[[[1,\"            \"],[11,\"button\"],[24,\"area-label\",\"Toggle details\"],[24,\"data-test-collapse-toggle\",\"\"],[24,4,\"button\"],[4,[38,4],[\"click\",[30,0,[\"showDetailsToggle\"]]],null],[12],[8,[39,5],null,[[\"@icon\",\"@size\"],[\"chevron-down\",\"20\"]],null],[1,\"\\n            \"],[13],[1,\"\\n\"]],[]]],[1,\"        \"],[13],[1,\"\\n      \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[2]]],[13]],[\"@data\",\"career\",\"item\",\"item\",\"item\"],false,[\"let\",\"each\",\"-track-array\",\"if\",\"on\",\"md-icon\"]]",
+    "id": "U/5prJfH",
+    "block": "[[[10,0],[14,0,\"flex flex-col pt-2\"],[12],[1,\"\\n\\n  \"],[10,0],[14,0,\"bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"text-mygreen font-bold bg-transparent mb-4\"],[12],[1,\"\\n      Career Summary\\n    \"],[13],[1,\"\\n\"],[42,[28,[37,1],[[28,[37,1],[[30,1,[\"career\"]]],null]],null],null,[[[1,\"      \"],[10,0],[14,0,\"text-mygrey text-md bg-transparent\"],[12],[1,\"\\n        \"],[10,0],[14,0,\"text-mygrey text-sm bg-transparent\"],[12],[1,\"\\n          \"],[10,0],[14,0,\"bg-transparent font-bold text-black mb-1\"],[12],[1,\"\\n            \"],[1,[30,2,[\"headline\"]]],[1,\"\\n          \"],[13],[1,\"\\n          \"],[10,0],[14,0,\"mb-2\"],[12],[1,\"\\n            \"],[10,0],[14,\"data-test-employer-name\",\"\"],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"employer\"]]],[1,\"\\n            \"],[13],[1,\"\\n            \"],[10,0],[14,0,\"bg-white text-black\"],[12],[1,[30,2,[\"period\"]]],[1,\"\\n            \"],[13],[1,\"\\n          \"],[13],[1,\"\\n\"],[41,[28,[37,3],[[28,[37,4],[[30,0,[\"showDetails\"]],true],null],[28,[37,5],[[30,2,[\"employer\"]],\"Accounting d.o.o.\"],null]],null],[[[1,\"            \"],[10,0],[14,0,\"ml-4 bg-white\"],[12],[1,\"\\n              \"],[10,\"ul\"],[14,0,\"list-disc mb-4\"],[12],[1,\"\\n\"],[42,[28,[37,1],[[28,[37,1],[[30,2,[\"obligations\"]]],null]],null],null,[[[1,\"                  \"],[10,\"li\"],[14,0,\"bg-white\"],[12],[1,[30,3]],[13],[1,\"\\n\"]],[3]],null],[1,\"              \"],[13],[1,\"\\n            \"],[13],[1,\"\\n\"]],[]],[[[1,\"            \"],[11,\"button\"],[24,\"area-label\",\"Toggle details\"],[24,0,\"inset-x-0\"],[24,4,\"button\"],[4,[38,6],[\"click\",[30,0,[\"showDetailsToggle\"]]],null],[12],[8,[39,7],null,[[\"@icon\",\"@size\"],[\"chevron-down\",\"20\"]],null],[1,\"\\n            \"],[13],[1,\"\\n\"]],[]]],[1,\"        \"],[13],[1,\"\\n      \"],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n\"],[13]],[\"@data\",\"career\",\"item\"],false,[\"each\",\"-track-array\",\"if\",\"or\",\"eq\",\"not-eq\",\"on\",\"md-icon\"]]",
     "moduleName": "my-portfolio/components/career.hbs",
     "isStrictMode": false
   });
@@ -478,6 +446,20 @@
   });
   0; //eaimeta@70e063a35619d71f0,"@ember-data/debug"eaimeta@70e063a35619d71f
 });
+;define("my-portfolio/helpers/and", ["exports", "ember-truth-helpers/helpers/and"], function (_exports, _and) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _and.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/and"eaimeta@70e063a35619d71f
+});
 ;define("my-portfolio/helpers/app-version", ["exports", "@ember/component/helper", "my-portfolio/config/environment", "ember-cli-app-version/utils/regexp"], function (_exports, _helper, _environment, _regexp) {
   "use strict";
 
@@ -528,6 +510,160 @@
   });
   0; //eaimeta@70e063a35619d71f0,"@embroider/util"eaimeta@70e063a35619d71f
 });
+;define("my-portfolio/helpers/eq", ["exports", "ember-truth-helpers/helpers/eq"], function (_exports, _eq) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _eq.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/eq"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/gt", ["exports", "ember-truth-helpers/helpers/gt"], function (_exports, _gt) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _gt.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/gt"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/gte", ["exports", "ember-truth-helpers/helpers/gte"], function (_exports, _gte) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _gte.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/gte"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/is-array", ["exports", "ember-truth-helpers/helpers/is-array"], function (_exports, _isArray) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _isArray.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-array"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/is-empty", ["exports", "ember-truth-helpers/helpers/is-empty"], function (_exports, _isEmpty) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _isEmpty.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-empty"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/is-equal", ["exports", "ember-truth-helpers/helpers/is-equal"], function (_exports, _isEqual) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _isEqual.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-equal"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/lt", ["exports", "ember-truth-helpers/helpers/lt"], function (_exports, _lt) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _lt.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/lt"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/lte", ["exports", "ember-truth-helpers/helpers/lte"], function (_exports, _lte) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _lte.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/lte"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/not-eq", ["exports", "ember-truth-helpers/helpers/not-eq"], function (_exports, _notEq) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _notEq.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/not-eq"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/not", ["exports", "ember-truth-helpers/helpers/not"], function (_exports, _not) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _not.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/not"eaimeta@70e063a35619d71f
+});
+;define("my-portfolio/helpers/or", ["exports", "ember-truth-helpers/helpers/or"], function (_exports, _or) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _or.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/or"eaimeta@70e063a35619d71f
+});
 ;define("my-portfolio/helpers/page-title", ["exports", "ember-page-title/helpers/page-title"], function (_exports, _pageTitle) {
   "use strict";
 
@@ -560,6 +696,20 @@
   0; //eaimeta@70e063a35619d71f0,"ember-inflector/lib/helpers/singularize"eaimeta@70e063a35619d71f
   var _default = _singularize.default;
   _exports.default = _default;
+});
+;define("my-portfolio/helpers/xor", ["exports", "ember-truth-helpers/helpers/xor"], function (_exports, _xor) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _xor.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/xor"eaimeta@70e063a35619d71f
 });
 ;define("my-portfolio/initializers/app-version", ["exports", "ember-cli-app-version/initializer-factory", "my-portfolio/config/environment"], function (_exports, _initializerFactory, _environment) {
   "use strict";
@@ -674,47 +824,15 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
   class IndexRoute extends _route.default {
     async model() {
+      let response = await fetch('https://my-json-server.typicode.com/ajdinl/PortfolioNextTailwind/db');
+      let data = await response.json();
       return {
-        info: {
-          fullName: 'Ajdin Lojić',
-          description: 'Web developer',
-          cell: '+38761811375',
-          git: 'https://github.com/ajdinl',
-          website: 'https://ajdinlojic.vercel.app/',
-          email: 'ajdinl@live.com',
-          linkedin: '@ajdinlojic',
-          linkedinLink: 'https://www.linkedin.com/in/ajdin-lojic/',
-          address: 'Bosnia and Herzegovina, Sarajevo'
-        },
-        personal: {
-          profile: 'I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.',
-          languages: 'JavaScript, HTML/CSS',
-          more: 'ReactJS, NextJS, React Router, Redux, EmberJS, EmberData',
-          other: 'Tailwind CSS, Bootstrap, Adobe XD, Git, Visual Studio Code, Linux',
-          personalities: ['Accuracy', 'Organization', 'Creativity', 'Communication'],
-          hobbies: ['Motorcycling', 'Skiing', 'CryptoCurrency']
-        },
-        career: {
-          employer1: {
-            headline: 'Front-end developer',
-            employer: 'Experfy',
-            period: 'Aug 2021 to Present',
-            obligations: ['Writing well designed, testable, efficient code by using best software development practices', 'Creating website layout/user interfaces by using standard HTML/CSS practices', 'Integrating data from various back-end services and databases']
-          },
-          employer2: {
-            headline: 'Service Technician',
-            employer: 'Xenon-forte d.o.o.',
-            period: 'Oct 2020 to Aug 2021',
-            obligations: ['Troubleshooting hardware and software', 'Printer and computer diagnostic and service', 'Installation and configuration of print / scan equipment, computers and more']
-          },
-          employer3: {
-            headline: 'Administrative and technical assistant',
-            employer: 'Accounting d.o.o.',
-            period: 'Jan 2015 to Oct 2020',
-            obligations: ['Coordinating and performing administrative tasks', 'Provide operational support to the team', 'Creating and posting documentation, keeping a budget and cash register table']
-          }
-        }
+        data
       };
+    }
+    setupController(controller, model) {
+      super.setupController(controller, model);
+      controller.set('data', model.data);
     }
   }
   _exports.default = IndexRoute;
@@ -879,14 +997,14 @@
       pt-36 space-y-6 space-x-0 sm:space-x-8 justify-center min-h-screen'
   >
     <Button @isDark={{this.isDark}} @toggleTheme={{this.toggleTheme}} />
-    <Info @data={{@model.info}} @isDark={{this.isDark}} />
-    <Personal @data={{@model}} />
-    <Career @data={{@model}} />
+    <Info @data={{this.data.info}} @isDark={{this.isDark}} />
+    <Personal @data={{this.data}} />
+    <Career @data={{this.data}} />
   </div>
   */
   {
-    "id": "rHm1bawr",
-    "block": "[[[10,0],[15,0,[29,[\"flex flex-row flex-wrap\\n    \",[52,[30,0,[\"isDark\"]],\"bg-[#252525]\",\"bg-mybackground\"],\"\\n    pt-36 space-y-6 space-x-0 sm:space-x-8 justify-center min-h-screen\"]]],[12],[1,\"\\n  \"],[8,[39,1],null,[[\"@isDark\",\"@toggleTheme\"],[[30,0,[\"isDark\"]],[30,0,[\"toggleTheme\"]]]],null],[1,\"\\n  \"],[8,[39,2],null,[[\"@data\",\"@isDark\"],[[30,1,[\"info\"]],[30,0,[\"isDark\"]]]],null],[1,\"\\n  \"],[8,[39,3],null,[[\"@data\"],[[30,1]]],null],[1,\"\\n  \"],[8,[39,4],null,[[\"@data\"],[[30,1]]],null],[1,\"\\n\"],[13]],[\"@model\"],false,[\"if\",\"button\",\"info\",\"personal\",\"career\"]]",
+    "id": "mxHDgNDM",
+    "block": "[[[10,0],[15,0,[29,[\"flex flex-row flex-wrap\\n    \",[52,[30,0,[\"isDark\"]],\"bg-[#252525]\",\"bg-mybackground\"],\"\\n    pt-36 space-y-6 space-x-0 sm:space-x-8 justify-center min-h-screen\"]]],[12],[1,\"\\n  \"],[8,[39,1],null,[[\"@isDark\",\"@toggleTheme\"],[[30,0,[\"isDark\"]],[30,0,[\"toggleTheme\"]]]],null],[1,\"\\n  \"],[8,[39,2],null,[[\"@data\",\"@isDark\"],[[30,0,[\"data\",\"info\"]],[30,0,[\"isDark\"]]]],null],[1,\"\\n  \"],[8,[39,3],null,[[\"@data\"],[[30,0,[\"data\"]]]],null],[1,\"\\n  \"],[8,[39,4],null,[[\"@data\"],[[30,0,[\"data\"]]]],null],[1,\"\\n\"],[13]],[],false,[\"if\",\"button\",\"info\",\"personal\",\"career\"]]",
     "moduleName": "my-portfolio/templates/index.hbs",
     "isStrictMode": false
   });
@@ -971,7 +1089,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("my-portfolio/app")["default"].create({"name":"my-portfolio","version":"0.0.0+c46c40b2"});
+            require("my-portfolio/app")["default"].create({"name":"my-portfolio","version":"0.0.0+ea06aec8"});
           }
         
 //# sourceMappingURL=my-portfolio.map

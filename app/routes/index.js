@@ -2,65 +2,18 @@ import Route from '@ember/routing/route';
 
 export default class IndexRoute extends Route {
   async model() {
+    let response = await fetch(
+      'https://my-json-server.typicode.com/ajdinl/PortfolioNextTailwind/db'
+    );
+    let data = await response.json();
+
     return {
-      info: {
-        fullName: 'Ajdin Lojić',
-        description: 'Web developer',
-        cell: '+38761811375',
-        git: 'https://github.com/ajdinl',
-        website: 'https://ajdinlojic.vercel.app/',
-        email: 'ajdinl@live.com',
-        linkedin: '@ajdinlojic',
-        linkedinLink: 'https://www.linkedin.com/in/ajdin-lojic/',
-        address: 'Bosnia and Herzegovina, Sarajevo',
-      },
-      personal: {
-        profile:
-          'I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.',
-        languages: 'JavaScript, HTML/CSS',
-        more: 'ReactJS, NextJS, React Router, Redux, EmberJS, EmberData',
-        other:
-          'Tailwind CSS, Bootstrap, Adobe XD, Git, Visual Studio Code, Linux',
-        personalities: [
-          'Accuracy',
-          'Organization',
-          'Creativity',
-          'Communication',
-        ],
-        hobbies: ['Motorcycling', 'Skiing', 'CryptoCurrency'],
-      },
-      career: {
-        employer1: {
-          headline: 'Front-end developer',
-          employer: 'Experfy',
-          period: 'Aug 2021 to Present',
-          obligations: [
-            'Writing well designed, testable, efficient code by using best software development practices',
-            'Creating website layout/user interfaces by using standard HTML/CSS practices',
-            'Integrating data from various back-end services and databases',
-          ],
-        },
-        employer2: {
-          headline: 'Service Technician',
-          employer: 'Xenon-forte d.o.o.',
-          period: 'Oct 2020 to Aug 2021',
-          obligations: [
-            'Troubleshooting hardware and software',
-            'Printer and computer diagnostic and service',
-            'Installation and configuration of print / scan equipment, computers and more',
-          ],
-        },
-        employer3: {
-          headline: 'Administrative and technical assistant',
-          employer: 'Accounting d.o.o.',
-          period: 'Jan 2015 to Oct 2020',
-          obligations: [
-            'Coordinating and performing administrative tasks',
-            'Provide operational support to the team',
-            'Creating and posting documentation, keeping a budget and cash register table',
-          ],
-        },
-      },
+      data,
     };
+  }
+
+  setupController(controller, model) {
+    super.setupController(controller, model);
+    controller.set('data', model.data);
   }
 }

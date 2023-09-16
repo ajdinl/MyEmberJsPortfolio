@@ -1,66 +1,34 @@
 <div class='flex flex-col pt-2'>
-  {{#let @data.career as |career|}}
-    <div class='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24'>
-      <div class='text-mygreen font-bold bg-transparent mb-4'>
-        Career Summary
-      </div>
+
+  <div class='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 lg:mt-24'>
+    <div class='text-mygreen font-bold bg-transparent mb-4'>
+      Career Summary
+    </div>
+    {{#each @data.career as |career|}}
       <div class='text-mygrey text-md bg-transparent'>
         <div class='text-mygrey text-sm bg-transparent'>
           <div class='bg-transparent font-bold text-black mb-1'>
-            {{career.employer1.headline}}
+            {{career.headline}}
           </div>
           <div class='mb-2'>
             <div
               data-test-employer-name
               class='bg-white text-black'
-            >{{career.employer1.employer}}
+            >{{career.employer}}
             </div>
-            <div class='bg-white text-black'>{{career.employer1.period}}
-            </div>
-          </div>
-          <div class='ml-4 bg-white'>
-            <ul class='list-disc mb-4'>
-              {{#each career.employer1.obligations as |item|}}
-                <li class='bg-white'>{{item}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          <div class='bg-transparent font-bold text-black mb-1'>
-            {{career.employer2.headline}}
-          </div>
-          <div class='mb-2'>
-            <div class='bg-white text-black'>{{career.employer2.employer}}
-            </div>
-            <div class='bg-white text-black'>{{career.employer2.period}}
+            <div class='bg-white text-black'>{{career.period}}
             </div>
           </div>
-          <div class='ml-4 bg-white'>
-            <ul class='list-disc mb-4'>
-              {{#each career.employer2.obligations as |item|}}
-                <li class='bg-white'>{{item}}</li>
-              {{/each}}
-            </ul>
-          </div>
-          <div class='bg-transparent font-bold text-black mb-1 pb-2'>
-            {{career.employer3.headline}}
-          </div>
-          <div class='mb-2'>
-            <div class='bg-white text-black'>{{career.employer3.employer}}
-            </div>
-            <div class='bg-white text-black'>{{career.employer3.period}}
-            </div>
-          </div>
-
-          {{#if this.showDetails}}
-
-            <div
-              data-test-collapse-toggle
-              class='ml-4 bg-white'
-              {{on 'click' this.showDetailsToggle}}
-            >
+          {{#if
+            (or
+              (eq this.showDetails true)
+              (not-eq career.employer 'Accounting d.o.o.')
+            )
+          }}
+            <div class='ml-4 bg-white'>
               <ul class='list-disc mb-4'>
-                {{#each career.employer3.obligations as |item|}}
-                  <li data-test-collapse-details class='bg-white'>{{item}}</li>
+                {{#each career.obligations as |item|}}
+                  <li class='bg-white'>{{item}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -68,13 +36,13 @@
             <button
               area-label='Toggle details'
               type='button'
-              data-test-collapse-toggle
+              class='inset-x-0'
               {{on 'click' this.showDetailsToggle}}
             ><MdIcon @icon='chevron-down' @size='20' />
             </button>
           {{/if}}
         </div>
       </div>
-    </div>
-  {{/let}}
+    {{/each}}
+  </div>
 </div>
